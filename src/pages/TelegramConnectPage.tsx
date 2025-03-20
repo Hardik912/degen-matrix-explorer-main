@@ -10,6 +10,7 @@ import AnimatedCheckmark from '@/components/AnimatedCheckmark';
 import FloatingElements from '@/components/FloatingElements';
 import ScoreDisplay from '@/components/ScoreDisplay';
 import { useScore } from '@/context/ScoreContext';
+import Verida from '@/components/Verida';
 
 const telegramTasks = [
   'Checking Group Memberships',
@@ -27,12 +28,7 @@ const TelegramConnectPage = () => {
   const [score, setScore] = useState(0);
   const targetScore = 5250;
   
-  useEffect(() => {
-    // If Twitter is not connected, redirect back to Twitter
-    if (!twitterConnected) {
-      navigate('/connect/twitter');
-    }
-  }, [twitterConnected, navigate]);
+ 
   
   const handleConnect = () => {
     setIsConnecting(true);
@@ -64,7 +60,7 @@ const TelegramConnectPage = () => {
             setTimeout(() => {
               setTelegramScore(targetScore);
               setTelegramConnected(true);
-              navigate('/connect/wallet');
+              navigate('/scorecard');
             }, 2000);
           }
           setScore(currentScore);
@@ -124,17 +120,17 @@ const TelegramConnectPage = () => {
               Your community engagement matters. Let's analyze it!
             </motion.p>
             
-            {!isConnecting && (
+            {/* {!isConnecting && (
               <CyberButton 
-                onClick={handleConnect} 
+               
                 className="w-full"
                 variant="secondary"
                 icon={<MessageSquare size={18} />}
               >
-                Connect Telegram
+                 dsa
               </CyberButton>
             )}
-            
+          
             {isConnecting && (
               <div className="text-left">
                 {telegramTasks.map((task, index) => (
@@ -147,7 +143,9 @@ const TelegramConnectPage = () => {
                 ))}
               </div>
             )}
-            
+             */}
+         <div className='relative left-14'><Verida/></div>
+
             {completedScan && (
               <motion.div
                 initial={{ opacity: 0, scale: 0.8 }}

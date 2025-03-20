@@ -3,8 +3,8 @@ import { useNavigate } from 'react-router-dom';
 import GlassMorphicCard from '@/components/ui/GlassMorphicCard';
 import TransitionEffect from '@/components/TransitionEffect';
 import ScoreCounter from '@/components/ScoreCounter';
+import ReferFriend from './ReferFriend';
 import Leaderboard from './Leaderboard'
-
 import { useRef, useEffect } from "react"
 import {
   ChevronDown,
@@ -814,26 +814,30 @@ const Analysis = () => {
       <div className="absolute inset-0 bg-gradient-to-tr from-degen-dark/40 to-black/90 z-0"></div>
       
       <div className="max-w-7xl mx-auto relative z-10">
+      <div className="absolute top-1 right-4">
+  <ReferFriend />
+</div>
+
         <TransitionEffect>
           <div className="flex flex-col md:flex-row items-start md:items-center justify-between gap-4 mb-6">
-            <div>
-              {/* <button 
+            {/* <div>
+              <button 
                 onClick={() => navigate('/scorecard')}
                 className="glass px-3 py-1.5 rounded-full flex items-center gap-2 mb-2 text-white/70 hover:text-white transition-colors"
               >
                 <ArrowLeft size={14} /> Back to Scorecard
-              </button> */}
+              </button>
               <h1 className="text-3xl md:text-4xl font-bold text-glow">Degen Analytics Dashboard</h1>
             </div>
             
             <div className="glass py-1.5 px-4 rounded-full flex items-center gap-3">
               <div className="w-3 h-3 bg-green-500 rounded-full animate-pulse"></div>
-              <span className="text-sm">Your Degen Score: <span className="font-bold text-degen-glow">927</span></span>
-            </div>
+              <span className="text-sm"> <span className="font-bold text-degen-glow"></span></span>
+            </div> */}
           </div>
         </TransitionEffect>
 
-        <Leaderboard/>
+        <div className='mt-14'><Leaderboard/></div>
         
         <Tabs defaultValue="analytics" className="w-full" onValueChange={setActiveTab}>
           <TransitionEffect delay={200}>

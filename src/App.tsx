@@ -5,6 +5,8 @@ import { TooltipProvider } from "@/components/ui/tooltip";
 import { QueryClient, QueryClientProvider } from "@tanstack/react-query";
 import { BrowserRouter, Routes, Route, Navigate } from "react-router-dom";
 import { ScoreProvider } from "./context/ScoreContext";
+import { WagmiProvider } from "wagmi";
+import { config } from "./config";
 import { AnimatePresence } from "framer-motion";
 import Analysis from './pages/Analysis'
 import Index from "./pages/Index";
@@ -32,7 +34,16 @@ const App = () => (
               <Route path="/start" element={<StartPage />} />
               <Route path="/connect/twitter" element={<TwitterConnectPage />} />
               <Route path="/connect/telegram" element={<TelegramConnectPage />} />
-              <Route path="/connect/wallet" element={<WalletConnectPage />} />
+              <Route path="/connect/wallet" element={
+                
+               
+        <WagmiProvider config={config}>
+       
+  
+  <WalletConnectPage/>
+ 
+</WagmiProvider>
+} />
               <Route path="/scorecard" element={<ScorecardPage />} />
               <Route path="/dashboard" element={<Analysis/>} />
               <Route path="/not-found" element={<NotFound />} />

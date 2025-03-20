@@ -121,7 +121,7 @@ const TwitterConnectPage = () => {
             setTimeout(() => {
               setTwitterScore(targetScore);
               setTwitterConnected(true);
-              navigate("/connect/telegram");
+              navigate("/connect/wallet");
             }, 2000);
           }
           setScore(currentScore);

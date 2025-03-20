@@ -55,10 +55,10 @@ const ScorecardPage = () => {
   const [showAchievements, setShowAchievements] = useState(false);
   
   useEffect(() => {
-    if (!walletConnected) {
-      navigate('/connect/wallet');
-      return;
-    }
+    // if (!walletConnected) {
+    //   navigate('/connect/wallet');
+    //   return;
+    // }
     
     const timer = setTimeout(() => {
       setAnimationComplete(true);
